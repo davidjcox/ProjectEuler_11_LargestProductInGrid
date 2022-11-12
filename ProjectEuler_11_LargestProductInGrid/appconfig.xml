@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <GridDimension>20</GridDimension>
-  <!-- dimension of each side of square grid, must be greater tha or equal to NumberOfIntegersToMultiply and MAX 100 -->
+  <!-- dimension of each side of square grid, must be greater tha or equal to NumberOfIntegersToMultiply, MIN 3, and MAX 100 -->
   <NumberOfIntegersToMultiply>4</NumberOfIntegersToMultiply>
-  <!-- the number of integers in each direction to add together, must be less than or equal to GridDimension and MAX 9-->
+  <!-- the number of integers in each direction to add together, must be less than or equal to GridDimension, MIN 2, and MAX 9-->
 </configuration>

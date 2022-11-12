@@ -212,12 +212,12 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
                 _numberOfIntegersToMultiply = numberOfIntegersToMultiplyOutput;
             }
 
-            if (!(_gridDimension <= 100 && _gridDimension > _numberOfIntegersToMultiply))
+            if (!(_gridDimension >= 3 && _gridDimension <= 100 && _gridDimension > _numberOfIntegersToMultiply))
             {
                 _gridDimension = 20;
             }
 
-            if (!(_numberOfIntegersToMultiply <= 9 && _numberOfIntegersToMultiply < _gridDimension))
+            if (!(_numberOfIntegersToMultiply >=2 && _numberOfIntegersToMultiply <= 9 && _numberOfIntegersToMultiply < _gridDimension))
             {
                 _numberOfIntegersToMultiply = 4;
             }

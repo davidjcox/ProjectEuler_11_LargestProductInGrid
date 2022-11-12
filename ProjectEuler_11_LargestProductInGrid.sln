@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectEuler_11_LargestProductInGrid", "ProjectEuler_11_LargestProductInGrid\ProjectEuler_11_LargestProductInGrid.csproj", "{E3EE9E56-D585-487F-8AE4-60097522F637}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3EE9E56-D585-487F-8AE4-60097522F637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3EE9E56-D585-487F-8AE4-60097522F637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3EE9E56-D585-487F-8AE4-60097522F637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3EE9E56-D585-487F-8AE4-60097522F637}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C023DB60-14CB-4740-90A7-FE26D27D17C4}
+	EndGlobalSection
+EndGlobal

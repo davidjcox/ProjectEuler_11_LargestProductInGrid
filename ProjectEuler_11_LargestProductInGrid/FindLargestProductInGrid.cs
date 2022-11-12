@@ -200,23 +200,24 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
             var configuration = ProjectConfiguration.GetProjectConfiguration();
 
             string? gridDimension = configuration["GridDimension"];
+            string? numberOfIntegersToMultiply = configuration["NumberOfIntegersToMultiply"];
+
             if (gridDimension is not null && int.TryParse(gridDimension, out int gridDimensionOutput))
             {
-                if (gridDimensionOutput <= 100)
-                    _gridDimension = gridDimensionOutput;
+                _gridDimension = gridDimensionOutput;
             }
-            else
+
+            if (numberOfIntegersToMultiply is not null && int.TryParse(numberOfIntegersToMultiply, out int numberOfIntegersToMultiplyOutput))
+            {
+                _numberOfIntegersToMultiply = numberOfIntegersToMultiplyOutput;
+            }
+
+            if (!(_gridDimension <= 100 && _gridDimension > _numberOfIntegersToMultiply))
             {
                 _gridDimension = 20;
             }
 
-            string? numberOfIntegersToMultiply = configuration["NumberOfIntegersToMultiply"];
-            if (numberOfIntegersToMultiply is not null && int.TryParse(numberOfIntegersToMultiply, out int numberOfIntegersToMultiplyOutput))
-            {
-                if (numberOfIntegersToMultiplyOutput <= 9)
-                    _numberOfIntegersToMultiply = numberOfIntegersToMultiplyOutput;
-            }
-            else
+            if (!(_numberOfIntegersToMultiply <= 9 && _numberOfIntegersToMultiply < _gridDimension))
             {
                 _numberOfIntegersToMultiply = 4;
             }

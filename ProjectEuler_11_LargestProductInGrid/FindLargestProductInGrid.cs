@@ -6,7 +6,6 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
     {
         private static int _gridDimension;
         private static int _numberOfIntegersToMultiply;
-        private static IntegerSeries largestIntegerProduct;
 
         public static void Main(string[] args)
         {

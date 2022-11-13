@@ -9,19 +9,35 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
 
         public static void Main(string[] args)
         {
+            ConsoleKey response;
+            
             SetGlobalVariables();
 
-            int[,] gridArray = CreateGridArray();
+            do
+            {
+                int[,] gridArray = CreateGridArray();
 
-            IntegerSeries integerSeries = new IntegerSeries();
+                IntegerSeries integerSeries = new IntegerSeries();
 
-            integerSeries = FindTheLargestProductInGrid(ref gridArray);
+                integerSeries = FindTheLargestProductInGrid(ref gridArray);
 
-            PrintGridArray(gridArray, integerSeries);
+                PrintGridArray(gridArray, integerSeries);
 
-            PrintIntegerSeriesProduct(integerSeries);
-            
-            PrintIntegerSeriesIndices(integerSeries);
+                PrintIntegerSeriesProduct(integerSeries);
+
+                PrintIntegerSeriesIndices(integerSeries);
+
+                PrintPrompt();
+
+                response = Console.ReadKey(false).Key;
+
+                if (response != ConsoleKey.Enter)
+                {
+                    Console.WriteLine();
+                }
+            }
+            while (response != ConsoleKey.N);
+
         }
 
         private static int[,] CreateGridArray()
@@ -208,6 +224,19 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
             {
                 Console.WriteLine($"No sequence of integers produced a product!");
             }
+
+            Console.WriteLine();
+        }
+
+        private static void PrintPrompt()
+        {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+
+            Console.Write($"Again? Any key to continue, [n] to quit.");
+
+            Console.ResetColor();
+
+            Console.WriteLine();
         }
 
         private static void SetGlobalVariables()

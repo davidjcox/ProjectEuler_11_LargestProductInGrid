@@ -13,9 +13,11 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
 
             int[,] gridArray = CreateGridArray();
 
-            PrintGridArray(gridArray);
+            IntegerSeries integerSeries = new IntegerSeries();
 
-            IntegerSeries integerSeries = FindTheLargestProductInGrid(ref gridArray);
+            integerSeries = FindTheLargestProductInGrid(ref gridArray);
+
+            PrintGridArray(gridArray, integerSeries);
 
             PrintIntegerSeriesProduct(integerSeries);
             
@@ -39,7 +41,7 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
             return gridArray;
         }
 
-        private static void PrintGridArray(int[,] gridArray)
+        private static void PrintGridArray(int[,] gridArray, IntegerSeries integerSeries)
         {
 
             if (gridArray is not null)
@@ -48,7 +50,20 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
                 {
                     for (int column = 0; column < _gridDimension; column++)
                     {
+                        if (integerSeries.indices.Count != 0)
+                        {
+                            foreach (Tuple<int, int> index in integerSeries.indices)
+                            {
+                                if (row == index.Item1 && column == index.Item2)
+                                {
+                                    Console.BackgroundColor = ConsoleColor.Red;
+                                }
+                            }
+                        }
+
                         Console.Write($" {gridArray[row, column]:00}");
+
+                        Console.ResetColor();
                     }
 
                     Console.WriteLine();

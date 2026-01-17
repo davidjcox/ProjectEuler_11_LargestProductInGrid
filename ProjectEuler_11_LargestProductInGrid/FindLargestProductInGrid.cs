@@ -20,15 +20,10 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
                 IntegerSeries integerSeries = new IntegerSeries();
 
                 integerSeries = FindTheLargestProductInGrid(ref gridArray);
-
                 PrintGridArray(gridArray, integerSeries);
-
                 PrintIntegerSeriesProduct(integerSeries);
-
                 PrintIntegerSeriesIndices(integerSeries);
-
                 PrintPrompt();
-
                 response = Console.ReadKey(false).Key;
 
                 if (response != ConsoleKey.Enter)
@@ -76,16 +71,12 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
                                 }
                             }
                         }
-
                         Console.Write($" {gridArray[row, column]:00}");
-
                         Console.ResetColor();
                     }
-
                     Console.WriteLine();
                 }
             }
-
             Console.WriteLine();
         }
         
@@ -98,7 +89,6 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
                 for (int currentColumn = columnIndex; currentColumn < columnIndex + _numberOfIntegersToMultiply; currentColumn++)
                 {
                     integerSeries.indices.Add(new Tuple<int, int>(rowIndex, currentColumn));
-                    
                     integerSeries.product *= gridArray[rowIndex, currentColumn];
                 }
             }
@@ -115,7 +105,6 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
                 for (int currentRowIndex = rowIndex; currentRowIndex < rowIndex + _numberOfIntegersToMultiply; currentRowIndex++)
                 {
                     integerSeries.indices.Add(new Tuple<int, int>(currentRowIndex, columnIndex));
-                    
                     integerSeries.product *= gridArray[currentRowIndex, columnIndex];
                 }
             }
@@ -132,7 +121,6 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
                 for (int currentIndexOffset = 0; currentIndexOffset < _numberOfIntegersToMultiply; currentIndexOffset++)
                 {
                     integerSeries.indices.Add(new Tuple<int, int>(rowIndex + currentIndexOffset, columnIndex + currentIndexOffset));
-                    
                     integerSeries.product *= gridArray[rowIndex + currentIndexOffset, columnIndex + currentIndexOffset];
                 }
             }
@@ -149,7 +137,6 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
                 for (int currentIndexOffset = 0; currentIndexOffset < _numberOfIntegersToMultiply; currentIndexOffset++)
                 {
                     integerSeries.indices.Add(new Tuple<int, int>(rowIndex + currentIndexOffset, columnIndex - currentIndexOffset));
-                    
                     integerSeries.product *= gridArray[rowIndex + currentIndexOffset, columnIndex - currentIndexOffset];
                 }
             }
@@ -203,7 +190,6 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
         private static void PrintIntegerSeriesProduct(IntegerSeries integerSeries)
         {
             Console.WriteLine($"The largest product of {_numberOfIntegersToMultiply} integers in a {_gridDimension} x {_gridDimension} array is: {integerSeries.product}.");
-            
             Console.WriteLine();
         }
 
@@ -217,25 +203,20 @@ namespace ProjectEuler_11_LargestProductInGrid.FindLargestProductInGrid
                 {
                     Console.Write($"[{index.Item1.ToString()},{index.Item2.ToString()}] ");
                 }
-
                 Console.WriteLine();
             }
             else
             {
                 Console.WriteLine($"No sequence of integers produced a product!");
             }
-
             Console.WriteLine();
         }
 
         private static void PrintPrompt()
         {
             Console.BackgroundColor = ConsoleColor.DarkBlue;
-
             Console.Write($"Again? Any key to continue, [n] to quit.");
-
             Console.ResetColor();
-
             Console.WriteLine();
         }
 
